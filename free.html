@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> HOME </title>
+    <title> Free Page </title>
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <link rel="stylesheet" href="midtest.css">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 </head>
-<body class="wrapper">
+<body>
     <header>
         <div class="navbar">
             <div class="logo">
@@ -19,7 +19,7 @@
 
             <div class="navbar-menu">
                 <ul>
-                    <li><a class="home" href="#">Home</a></li>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="biodata.html">Biodata</a></li>
                     <li><a href="contact_us.html">Contact Us</a></li>
                     <li><a class="free" href="free.html"><b>Games</b></a></li>
@@ -28,47 +28,29 @@
         </div>
     </header>
     
-    <section class="content">
-        <div class="container">
-            <div class="img1">
-                <img src="images/gambar 1.jpeg" alt="image 1">
+
+    <div class="thank-you">
+        <div class="game-container" data-state="stopped" data-difficulty="medium">
+            <div class="menu">
+                <button class="btn" onclick="this.closest('.game-container').dataset.state = 'playing'">Start</button>
+                <button class="btn" onclick="this.closest('.game-container').dataset.state = 'stopped'; this.closest('.game-container').querySelector('.score span').textContent = '0';">Stop</button>
             </div>
-            <div class="text1">
-                <h2>Daya Employee Self Service</h2>
-                <div class="p1">
-                    <p>"Jaringan penjualan dan layanan purna jual sepeda motor Honda terbaik di Indonesia."</p>
-                </div>
-                <div class="p2">
-                    <p>#visidayamotor</p>
-                </div>
+            
+            <div class="difficulty">
+                <label>Difficulty:</label>
+                <button class="btn" onclick="this.closest('.game-container').dataset.difficulty = 'easy'">Easy</button>
+                <button class="btn" onclick="this.closest('.game-container').dataset.difficulty = 'medium'">Medium</button>
+                <button class="btn" onclick="this.closest('.game-container').dataset.difficulty = 'hard'">Hard</button>
             </div>
-        </div>
-    </section>
-    <section class="content">
-        <div class="container2">
-            <div class="card1">
-                <img class="img2" src="images/gambar 2.jpg" alt="">
-                <div class="card-body">
-                    <h3 class="card-title">Attendance</h3>
-                    <p class="card-text">Online Attendance.</p>
-                </div>
-            </div>
-            <div class="card2">
-                <img class="img3" src="images/gambar3jpg.jpg" alt="">
-                <div class="card-body">
-                    <h3 class="card-title">Leaves / Time Off</h3>
-                    <p class="card-text">Manage Leaves.</p>
-                </div>
-            </div>
-            <div class="card3">
-                <img class="img4" src="images/gambar4.jpg" alt="">
-                <div class="card-body">
-                    <h3 class="card-title">eLearning</h3>
-                    <p class="card-text">Learn and upgrade your skills.</p>
-                </div>
+    
+            <div class="score">Score: <span>0</span></div>
+            
+            <div class="game-area">
+                <div class="target" onclick="let score = this.closest('.game-container').querySelector('.score span'); score.textContent = parseInt(score.textContent) + 1;"></div>
             </div>
         </div>
-    </section>
+    </div>
+
 
     <footer class="footer">
         <div class="footer-container">

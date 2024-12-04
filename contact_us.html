@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> HOME </title>
+    <title> CONTACT US </title>
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <link rel="stylesheet" href="midtest.css">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 </head>
-<body class="wrapper">
+<body>
     <header>
         <div class="navbar">
             <div class="logo">
@@ -19,7 +19,7 @@
 
             <div class="navbar-menu">
                 <ul>
-                    <li><a class="home" href="#">Home</a></li>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="biodata.html">Biodata</a></li>
                     <li><a href="contact_us.html">Contact Us</a></li>
                     <li><a class="free" href="free.html"><b>Games</b></a></li>
@@ -28,47 +28,53 @@
         </div>
     </header>
     
-    <section class="content">
-        <div class="container">
-            <div class="img1">
-                <img src="images/gambar 1.jpeg" alt="image 1">
-            </div>
-            <div class="text1">
-                <h2>Daya Employee Self Service</h2>
-                <div class="p1">
-                    <p>"Jaringan penjualan dan layanan purna jual sepeda motor Honda terbaik di Indonesia."</p>
-                </div>
-                <div class="p2">
-                    <p>#visidayamotor</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="content">
-        <div class="container2">
-            <div class="card1">
-                <img class="img2" src="images/gambar 2.jpg" alt="">
-                <div class="card-body">
-                    <h3 class="card-title">Attendance</h3>
-                    <p class="card-text">Online Attendance.</p>
-                </div>
-            </div>
-            <div class="card2">
-                <img class="img3" src="images/gambar3jpg.jpg" alt="">
-                <div class="card-body">
-                    <h3 class="card-title">Leaves / Time Off</h3>
-                    <p class="card-text">Manage Leaves.</p>
-                </div>
-            </div>
-            <div class="card3">
-                <img class="img4" src="images/gambar4.jpg" alt="">
-                <div class="card-body">
-                    <h3 class="card-title">eLearning</h3>
-                    <p class="card-text">Learn and upgrade your skills.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <h1>Contact Us form</h1><br>
+    <form action="/process.php" method="post">
+        <fieldset>
+            <legend>User Information</legend>
+            <label for="fname">First Name: </label>
+            <input type="text" id="fname" name="fname" placeholder="John" required><br><br>
+            <label for="lname">Family Name: </label>
+            <input type="text" id="lname" name="lname" placeholder="Sagala" required><br><br>
+            <label for="email">Email: </label>
+            <input type="email" id="email" name="email" placeholder="john@example.com" autocomplete="off" required><br><br>
+            <label for="user">Username: </label>
+            <input type="text" id="user" name="user" placeholder="" required><br><br>
+            <label for="pass">Password: </label>
+            <input type="password" name="pass" id="pass" required><br><br>
+        </fieldset><br><br>
+
+        <fieldset>
+            <legend>Survey Information</legend>
+            <label for="male">Male:</label>
+            <input type="radio" id="male" name="gender" value="male" required><br>
+            <label for="female">Female:</label>
+            <input type="radio" id="female" name="gender" value="female" required><br><br>
+            <label for="dob">Birthdate:</label>
+            <input type="date" id="dob" name="dob" min="1997-12-30" max="2012-12-30" required><br><br>
+            <label for="religion">Religion:</label>
+            <select id="religion" name="religion" required>
+                <option value="adventist">Christians</option>
+                <option value="muslim">Muslims</option>
+                <option value="atheist">Atheist</option>
+            </select><br><br>
+            <label for="dob">Addres:</label><br>
+            <textarea placeholder="Masukkan alamat Anda di sini..." name="addres" rows="5" cols="50"></textarea><br><br>
+            <label for="hobbies">Select Your Hobbies:</label><br>
+            <input type="checkbox" id="sports" name="hobbies" value="sports">
+            <label for="sports">Sports</label><br>
+            <input type="checkbox" id="games" name="hobbies" value="games">
+            <label for="games">Playing Games</label><br>
+            <input type="checkbox" id="sing" name="hobbies" value="sing">
+            <label for="sing">Singing</label><br><br>
+        </fieldset><br><br>
+
+        <fieldset><br>
+            <legend>Actions</legend>
+            <input type="submit" value="Save"><br><br>
+        </fieldset><br><br>
+    </form>
+    
 
     <footer class="footer">
         <div class="footer-container">
