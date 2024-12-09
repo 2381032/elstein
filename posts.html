@@ -67,31 +67,9 @@
       </div>
     </nav>
 
-    <section class="content">
-      <div class="container">
-        <div class="img5">
-          <img src="images/foto.jpg" alt="image 1" />
-        </div>
-        <div class="text5">
-          <h2>Hai Saya Yecoef Eloi SItumorang</h2>
-          <div class="p5">
-            <p>
-              Saya lahir di Bandung pada tanggal 29 Maret 2006. Saya tinggal di
-              Bandung. Saya seorang Pria berkewarganegaraan Indonesia dan
-              menganut agama Advent. Hobi saya adalah Bermain Gitar dan Olahraga
-              Badminton. Saya Kuliah Di UNAI dan mengambil jurusan Teknik
-              Informatika.<br /><br />
-              Dalam belajar pengembangan web, saya sangat menyukai proses
-              kreatif dalam merancang tampilan dan antarmuka yang interaktif
-              serta estetis. Selain itu, saya menikmati tantangan dalam
-              memecahkan masalah logika saat menulis kode dan melihat hasil
-              langsung dari upaya tersebut di layar. Namun, saya kurang menyukai
-              debugging yang kadang memakan waktu lama dan membingungkan,
-              terutama ketika kesalahan sulit ditemukan atau disebabkan oleh
-              hal-hal kecil seperti kesalahan sintaks.
-            </p>
-          </div>
-        </div>
+    <section class="container mx-auto px-5 py-48">
+      <div id="post-container" class="flex justify-center items-center">
+        <div id="loading" class="text-lg text-gray-500">Loading...</div>
       </div>
     </section>
 
@@ -206,5 +184,29 @@
       </div>
     </footer>
     <script src="script.js"></script>
+    <script>
+      const postContainer = document.getElementById("post-container");
+      const postId = "32";
+
+      fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Failed to fetch the post.");
+          }
+          return response.json();
+        })
+        .then((post) => {
+          postContainer.innerHTML = `
+                          <div class="text-white bg-[#6c757d] shadow-md rounded-lg p-6 max-w-xl mx-auto">
+                              <h2 class="text-xl font-semibold text-white-600 mb-4">Post ID: ${post.id}</h2>
+                              <h3 class="text-lg font-bold mb-2">${post.title}</h3>
+                              <p class="text-white">${post.body}</p>
+                          </div>
+                      `;
+        })
+        .catch((error) => {
+          postContainer.innerHTML = `<div class="text-red-500">${error.message}</div>`;
+        });
+    </script>
   </body>
 </html>

@@ -69,51 +69,59 @@
       </div>
     </nav>
 
-    <div class="thank-you">
+    <div
+      class="bg-[url(https://img.freepik.com/free-vector/dark-hexagonal-background-with-gradient-color_79603-1409.jpg)] flex flex-col items-center justify-center min-h-screen"
+    >
+      <div class="text-white text-5xl font-bold text-center py-10">
+        Catch The Ball
+      </div>
+
       <div class="game-container" data-state="stopped" data-difficulty="medium">
-        <div class="menu">
+        <!-- Menu -->
+        <div class="flex justify-center mb-6">
           <button
-            class="btn"
-            onclick="this.closest('.game-container').dataset.state = 'playing'"
+            class="btn bg-gray-700 hover:bg-gray-500 text-white py-2 px-4 mx-2 rounded"
+            onclick="startGame(this)"
           >
             Start
           </button>
-          <button
-            class="btn"
-            onclick="this.closest('.game-container').dataset.state = 'stopped'; this.closest('.game-container').querySelector('.score span').textContent = '0';"
-          >
-            Stop
-          </button>
         </div>
 
-        <div class="difficulty">
-          <label>Difficulty:</label>
-          <button
-            class="btn"
-            onclick="this.closest('.game-container').dataset.difficulty = 'easy'"
-          >
-            Easy
-          </button>
-          <button
-            class="btn"
-            onclick="this.closest('.game-container').dataset.difficulty = 'medium'"
-          >
-            Medium
-          </button>
-          <button
-            class="btn"
-            onclick="this.closest('.game-container').dataset.difficulty = 'hard'"
-          >
-            Hard
-          </button>
+        <!-- Difficulty -->
+        <div class="text-center mb-6">
+          <div class="text-white text-xl mb-2">Difficulty:</div>
+          <div class="flex justify-center difficulty">
+            <button
+              class="btn bg-gray-700 hover:bg-gray-500 text-white py-2 px-4 mx-2 rounded"
+              onclick="setDifficulty(this, 'easy')"
+            >
+              Easy
+            </button>
+            <button
+              class="btn bg-gray-700 hover:bg-gray-500 text-white py-2 px-4 mx-2 rounded"
+              onclick="setDifficulty(this, 'medium')"
+            >
+              Medium
+            </button>
+            <button
+              class="btn bg-gray-700 hover:bg-gray-500 text-white py-2 px-4 mx-2 rounded"
+              onclick="setDifficulty(this, 'hard')"
+            >
+              Hard
+            </button>
+          </div>
         </div>
 
-        <div class="score">Score: <span>0</span></div>
+        <!-- Score -->
+        <div class="text-white text-center text-xl mb-6">
+          Score: <span>0</span>
+        </div>
 
-        <div class="game-area">
+        <!-- Game Area -->
+        <div class="relative w-80 h-80 bg-gray-800 rounded-lg overflow-hidden">
           <div
-            class="target"
-            onclick="let score = this.closest('.game-container').querySelector('.score span'); score.textContent = parseInt(score.textContent) + 1;"
+            class="target w-12 h-12 bg-red-600 rounded-full absolute cursor-pointer"
+            onclick="increaseScore(this)"
           ></div>
         </div>
       </div>

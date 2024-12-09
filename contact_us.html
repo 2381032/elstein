@@ -69,107 +69,145 @@
       </div>
     </nav>
 
-    <h1>Contact Us form</h1>
-    <br />
-    <form action="/process.php" method="post">
-      <fieldset>
-        <legend>User Information</legend>
-        <label for="fname">First Name: </label>
-        <input
-          type="text"
-          id="fname"
-          name="fname"
-          placeholder="John"
-          required
-        /><br /><br />
-        <label for="lname">Family Name: </label>
-        <input
-          type="text"
-          id="lname"
-          name="lname"
-          placeholder="Sagala"
-          required
-        /><br /><br />
-        <label for="email">Email: </label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          placeholder="john@example.com"
-          autocomplete="off"
-          required
-        /><br /><br />
-        <label for="user">Username: </label>
-        <input
-          type="text"
-          id="user"
-          name="user"
-          placeholder=""
-          required
-        /><br /><br />
-        <label for="pass">Password: </label>
-        <input type="password" name="pass" id="pass" required /><br /><br />
-      </fieldset>
-      <br /><br />
+    <div
+      class="max-w-4xl my-[50px] mx-auto bg-white p-8 border-2 shadow-md rounded-lg"
+    >
+      <h1 class="text-center text-2xl font-bold mb-6 text-[rgba(0,_0,_0,_0.9)]">
+        Student Registration Form
+      </h1>
+      <form id="registrationForm" class="space-y-4">
+        <div>
+          <label for="fullName" class="block text-sm font-medium text-gray-600"
+            >Full Name</label
+          >
+          <input
+            type="text"
+            id="fullName"
+            name="fullName"
+            class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+            required
+          />
+        </div>
 
-      <fieldset>
-        <legend>Survey Information</legend>
-        <label for="male">Male:</label>
-        <input
-          type="radio"
-          id="male"
-          name="gender"
-          value="male"
-          required
-        /><br />
-        <label for="female">Female:</label>
-        <input
-          type="radio"
-          id="female"
-          name="gender"
-          value="female"
-          required
-        /><br /><br />
-        <label for="dob">Birthdate:</label>
-        <input
-          type="date"
-          id="dob"
-          name="dob"
-          min="1997-12-30"
-          max="2012-12-30"
-          required
-        /><br /><br />
-        <label for="religion">Religion:</label>
-        <select id="religion" name="religion" required>
-          <option value="adventist">Christians</option>
-          <option value="muslim">Muslims</option>
-          <option value="atheist">Atheist</option></select
-        ><br /><br />
-        <label for="dob">Addres:</label><br />
-        <textarea
-          placeholder="Masukkan alamat Anda di sini..."
-          name="addres"
-          rows="5"
-          cols="50"
-        ></textarea
-        ><br /><br />
-        <label for="hobbies">Select Your Hobbies:</label><br />
-        <input type="checkbox" id="sports" name="hobbies" value="sports" />
-        <label for="sports">Sports</label><br />
-        <input type="checkbox" id="games" name="hobbies" value="games" />
-        <label for="games">Playing Games</label><br />
-        <input type="checkbox" id="sing" name="hobbies" value="sing" />
-        <label for="sing">Singing</label><br /><br />
-      </fieldset>
-      <br /><br />
+        <div>
+          <label for="studentId" class="block text-sm font-medium text-gray-600"
+            >Student ID (NIM)</label
+          >
+          <input
+            type="text"
+            id="studentId"
+            name="studentId"
+            class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+            required
+          />
+        </div>
 
-      <fieldset>
-        <br />
-        <legend>Actions</legend>
-        <input type="submit" value="Save" /><br /><br />
-      </fieldset>
-      <br /><br />
-    </form>
+        <div>
+          <label for="email" class="block text-sm font-medium text-gray-600"
+            >Email Address</label
+          >
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+            required
+          />
+        </div>
+
+        <div>
+          <label for="faculty" class="block text-sm font-medium text-gray-600"
+            >Faculty/Major</label
+          >
+          <select
+            id="faculty"
+            name="faculty"
+            class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+          >
+            <option value="">Select Faculty/Major</option>
+            <option value="science">Science</option>
+            <option value="engineering">Engineering</option>
+            <option value="nusring">Nursing Science</option>
+            <option value="business">Business</option>
+            <option value="arts">Philosophy</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="dob" class="block text-sm font-medium text-gray-600"
+            >Date of Birth</label
+          >
+          <input
+            type="date"
+            id="dob"
+            name="dob"
+            class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+            required
+          />
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-gray-600">Gender</label>
+          <div class="mt-1 flex items-center space-x-4">
+            <label class="flex items-center">
+              <input
+                type="radio"
+                name="gender"
+                value="male"
+                class="form-radio text-blue-500"
+                required
+              />
+              <span class="ml-2">Male</span>
+            </label>
+            <label class="flex items-center">
+              <input
+                type="radio"
+                name="gender"
+                value="female"
+                class="form-radio text-blue-500"
+                required
+              />
+              <span class="ml-2">Female</span>
+            </label>
+          </div>
+        </div>
+
+        <div>
+          <label for="address" class="block text-sm font-medium text-gray-600"
+            >Address</label
+          >
+          <textarea
+            id="address"
+            name="address"
+            class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+            rows="3"
+            required
+          ></textarea>
+        </div>
+
+        <div>
+          <label for="phone" class="block text-sm font-medium text-gray-600"
+            >Phone Number</label
+          >
+          <input
+            type="text"
+            id="phone"
+            name="phone"
+            class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+            required
+          />
+        </div>
+
+        <div>
+          <button
+            type="submit"
+            class="w-full bg-[#6c757d] text-white py-2 px-4 rounded-md hover:bg-[#5a6268]"
+          >
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
 
     <footer class="bg-[#f8f9fa] py-2 shadow-sm">
       <div
