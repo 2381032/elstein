@@ -1,129 +1,286 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> CONTACT US </title>
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-    <link rel="stylesheet" href="midtest.css">
-    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
-</head>
-<body>
-    <header>
-        <div class="navbar">
-            <div class="logo">
-                <a href="index.html"><img src="images/DESS.png" alt="Logo"></a>
-            </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CONTACT US</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <nav class="bg-[#f8f9fa] py-2 shadow-sm">
+      <div
+        class="md:max-w-6xl h-[37px] md:h-[37px] mx-auto px-4 md:px-8 md:flex md:items-center md:justify-between"
+      >
+        <div class="flex justify-between">
+          <span>
+            <a href="index.html"
+              ><img class="h-[37px] inline" src="images/DESS.png" alt="Logo"
+            /></a>
+          </span>
 
-            <button class="navbar-toggler"><span class="nav-toggler-icon"></span></button>
-
-            <div class="navbar-menu">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="biodata.html">Biodata</a></li>
-                    <li><a href="contact_us.html">Contact Us</a></li>
-                    <li><a class="free" href="free.html"><b>Games</b></a></li>
-                </ul>
-            </div>
+          <span class="text-4xl cursor-pointer md:hidden block">
+            <ion-icon name="menu-outline" id="menu-icon"></ion-icon>
+          </span>
         </div>
-    </header>
-    
-    <h1>Contact Us form</h1><br>
+
+        <div>
+          <ul
+            id="menu"
+            class="hidden md:flex md:items-center text-[rgba(0,_0,_0,_0.5)] space-y-3 px-3 md:space-x-3 md:space-y-0 md:static absolute transition-all duration-500 ease-in-out overflow-hidden md:overflow-visible bg-[#f8f9fa] w-full left-0 md:w-auto md:py-0 py-4"
+          >
+            <li>
+              <a class="hover:text-[rgba(0,_0,_0,_0.9)]" href="index.html"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a class="hover:text-[rgba(0,_0,_0,_0.9)]" href="biodata.html"
+                >Biodata</a
+              >
+            </li>
+            <li>
+              <a class="text-[rgba(0,_0,_0,_0.9)]" href="contact_us.html"
+                >Contact Us</a
+              >
+            </li>
+            <li>
+              <a class="hover:text-[rgba(0,_0,_0,_0.9)]" href="posts.html"
+                >Posts</a
+              >
+            </li>
+            <li>
+              <a
+                class="hover:text-[rgba(0,_0,_0,_0.9)] py-2 md:border-l md:border-gray-300 md:pl-3"
+                href="free.html"
+                ><b>Games</b></a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <h1>Contact Us form</h1>
+    <br />
     <form action="/process.php" method="post">
-        <fieldset>
-            <legend>User Information</legend>
-            <label for="fname">First Name: </label>
-            <input type="text" id="fname" name="fname" placeholder="John" required><br><br>
-            <label for="lname">Family Name: </label>
-            <input type="text" id="lname" name="lname" placeholder="Sagala" required><br><br>
-            <label for="email">Email: </label>
-            <input type="email" id="email" name="email" placeholder="john@example.com" autocomplete="off" required><br><br>
-            <label for="user">Username: </label>
-            <input type="text" id="user" name="user" placeholder="" required><br><br>
-            <label for="pass">Password: </label>
-            <input type="password" name="pass" id="pass" required><br><br>
-        </fieldset><br><br>
+      <fieldset>
+        <legend>User Information</legend>
+        <label for="fname">First Name: </label>
+        <input
+          type="text"
+          id="fname"
+          name="fname"
+          placeholder="John"
+          required
+        /><br /><br />
+        <label for="lname">Family Name: </label>
+        <input
+          type="text"
+          id="lname"
+          name="lname"
+          placeholder="Sagala"
+          required
+        /><br /><br />
+        <label for="email">Email: </label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="john@example.com"
+          autocomplete="off"
+          required
+        /><br /><br />
+        <label for="user">Username: </label>
+        <input
+          type="text"
+          id="user"
+          name="user"
+          placeholder=""
+          required
+        /><br /><br />
+        <label for="pass">Password: </label>
+        <input type="password" name="pass" id="pass" required /><br /><br />
+      </fieldset>
+      <br /><br />
 
-        <fieldset>
-            <legend>Survey Information</legend>
-            <label for="male">Male:</label>
-            <input type="radio" id="male" name="gender" value="male" required><br>
-            <label for="female">Female:</label>
-            <input type="radio" id="female" name="gender" value="female" required><br><br>
-            <label for="dob">Birthdate:</label>
-            <input type="date" id="dob" name="dob" min="1997-12-30" max="2012-12-30" required><br><br>
-            <label for="religion">Religion:</label>
-            <select id="religion" name="religion" required>
-                <option value="adventist">Christians</option>
-                <option value="muslim">Muslims</option>
-                <option value="atheist">Atheist</option>
-            </select><br><br>
-            <label for="dob">Addres:</label><br>
-            <textarea placeholder="Masukkan alamat Anda di sini..." name="addres" rows="5" cols="50"></textarea><br><br>
-            <label for="hobbies">Select Your Hobbies:</label><br>
-            <input type="checkbox" id="sports" name="hobbies" value="sports">
-            <label for="sports">Sports</label><br>
-            <input type="checkbox" id="games" name="hobbies" value="games">
-            <label for="games">Playing Games</label><br>
-            <input type="checkbox" id="sing" name="hobbies" value="sing">
-            <label for="sing">Singing</label><br><br>
-        </fieldset><br><br>
+      <fieldset>
+        <legend>Survey Information</legend>
+        <label for="male">Male:</label>
+        <input
+          type="radio"
+          id="male"
+          name="gender"
+          value="male"
+          required
+        /><br />
+        <label for="female">Female:</label>
+        <input
+          type="radio"
+          id="female"
+          name="gender"
+          value="female"
+          required
+        /><br /><br />
+        <label for="dob">Birthdate:</label>
+        <input
+          type="date"
+          id="dob"
+          name="dob"
+          min="1997-12-30"
+          max="2012-12-30"
+          required
+        /><br /><br />
+        <label for="religion">Religion:</label>
+        <select id="religion" name="religion" required>
+          <option value="adventist">Christians</option>
+          <option value="muslim">Muslims</option>
+          <option value="atheist">Atheist</option></select
+        ><br /><br />
+        <label for="dob">Addres:</label><br />
+        <textarea
+          placeholder="Masukkan alamat Anda di sini..."
+          name="addres"
+          rows="5"
+          cols="50"
+        ></textarea
+        ><br /><br />
+        <label for="hobbies">Select Your Hobbies:</label><br />
+        <input type="checkbox" id="sports" name="hobbies" value="sports" />
+        <label for="sports">Sports</label><br />
+        <input type="checkbox" id="games" name="hobbies" value="games" />
+        <label for="games">Playing Games</label><br />
+        <input type="checkbox" id="sing" name="hobbies" value="sing" />
+        <label for="sing">Singing</label><br /><br />
+      </fieldset>
+      <br /><br />
 
-        <fieldset><br>
-            <legend>Actions</legend>
-            <input type="submit" value="Save"><br><br>
-        </fieldset><br><br>
+      <fieldset>
+        <br />
+        <legend>Actions</legend>
+        <input type="submit" value="Save" /><br /><br />
+      </fieldset>
+      <br /><br />
     </form>
-    
 
-    <footer class="footer">
-        <div class="footer-container">
-          <div class="footer-section">
-            <h4>Our Products & Services</h4>
-            <a class="foot-link" href="http://www.daya-motor.com" target="_blank">www.daya-motor.com</a>
-          </div>
-          <div class="footer-section">
-            <h4>Connect with us</h4>
-            <ul>
-                <li><a href="https://fti.unai.edu/">FTI UNAI</a></li>
-                <li><a href="https://unai.edu/">UNAI Website</a></li>
-                <li><a href="https://jurnal.unai.edu/index.php/teika">Jurnal Teika</a></li>
-            </ul>
-          </div>
-          <div class="footer-section1">
-            <h4>Daya Motor</h4>
-            <p>
-                <span style="color: rgb(0, 0, 0);font-family: Verdana;font-size: 10px;background-color: rgb(244, 244, 244);">
-                    PT. Daya Anugrah Mandiri atau lebih dikenal Daya Motor merupakan
-                    anak perusahaan Daya Group yang bergerak di bidang dealership
-                    sepeda motor Honda. Sejalan dengan makin bertumbuhnya industri
-                    otomotif di Indonesia, saat ini Daya Motor telah memiliki 93 cabang
-                    dan 120 AHASS yang tersebar di 23 propinsi.
-                </span>
-            </p>
+    <footer class="bg-[#f8f9fa] py-2 shadow-sm">
+      <div
+        class="container grid grid-cols-[1fr] md:grid-cols-[1fr_1fr_1fr] gap-[25px] max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"
+      >
+        <div>
+          <h4 class="text-[1.09375rem] font-medium">Our Products & Services</h4>
+          <a
+            class="text-[#007bff] text-[14px] hover:underline"
+            href="http://www.daya-motor.com"
+            target="_blank"
+            >www.daya-motor.com</a
+          >
+        </div>
+        <div>
+          <h4 class="text-[1.09375rem] font-medium">Connect with us</h4>
+          <ul class="text-[14px] leading-loose">
+            <li>
+              <a class="hover:underline" href="https://fti.unai.edu/"
+                >FTI UNAI</a
+              >
+            </li>
+            <li>
+              <a class="hover:underline" href="https://unai.edu/"
+                >UNAI Website</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-[1.09375rem] font-medium">Daya Motor</h4>
+          <p class="text-justify">
+            <span
+              class="text-[rgb(0,_0,_0)] leading-normal font-[Verdana] text-[10px] bg-[rgb(244,_244,_244)]"
+            >
+              PT. Daya Anugrah Mandiri atau lebih dikenal Daya Motor merupakan
+              anak perusahaan Daya Group yang bergerak di bidang dealership
+              sepeda motor Honda. Sejalan dengan makin bertumbuhnya industri
+              otomotif di Indonesia, saat ini Daya Motor telah memiliki 93
+              cabang dan 120 AHASS yang tersebar di 23 propinsi.
+            </span>
+          </p>
+        </div>
+      </div>
+
+      <div
+        class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid justify-center items-center md:flex md:justify-between pt-[50px] mb-[20px] md:mb-[10px]"
+      >
+        <div class="flex">
+          <p class="text-[rgba(33,_37,_41,_0.4)] text-[14px] pr-2">
+            Copyright © Daya Motor
+          </p>
+          <div class="relative font-sans">
+            <input type="radio" name="language" id="en" class="hidden" />
+            <input
+              type="radio"
+              name="language"
+              id="id"
+              class="hidden"
+              checked
+            />
+            <input type="checkbox" id="toggle" class="hidden" />
+
+            <!-- Main Button -->
+            <label
+              for="toggle"
+              class="grid items-center grid-cols-[1fr_auto] px-1 py-1 text-xs text-white bg-[#6c757d] border border-[#6c757d] rounded cursor-pointer hover:bg-[#5a6268] hover:border-[#545b62] hover:[transition:0.2s]"
+            >
+              <span id="current-lang" class="text-xs">Bahasa Indonesia</span>
+              <svg
+                class="w-4 h-4 ml-2 transform rotate-180"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M7 10l5 5 5-5H7z"></path>
+              </svg>
+            </label>
+
+            <!-- Dropdown Content -->
+            <div
+              class="absolute z-10 w-40 bg-white border border-gray-300 rounded shadow-md bottom-full left-0 hidden"
+              id="dropdown-content"
+            >
+              <label
+                for="en"
+                class="block px-3 py-2 text-sm text-gray-700 cursor-pointer hover:bg-gray-100"
+                >English (US)</label
+              >
+              <label
+                for="id"
+                class="block px-3 py-2 text-sm text-gray-700 cursor-pointer hover:bg-gray-100"
+                >Bahasa Indonesia</label
+              >
+            </div>
           </div>
         </div>
 
-        <div class="footer-bottom">
-            <div class="footb1">
-                <p>Copyright © Daya Motor </p>
-                    <div class="dropdown">
-                        <input type="radio" name="language" id="en">
-                        <input type="radio" name="language" id="id" checked>
-                        <input type="checkbox" id="toggle">
-                        <label class="main-button" for="toggle"></label>
-                        
-                        <div class="dropdown-content">
-                          <label for="en">English (US)</label>
-                          <label for="id">Bahasa Indonesia</label>
-                        </div>
-                      </div>
-            </div>
-            <div class="footb2">
-                <p>Powered by <a href="#"><img src="images/odoo.png" alt="odoo"></a> - Create a<a href="#"> free website</a></p>
-            </div>
+        <div>
+          <p class="flex justify-center items-center text-sm">
+            Powered by
+            <a href="#"
+              ><img class="h-[10.5px] px-1" src="images/odoo.png" alt="odoo"
+            /></a>
+            - Create a<a class="text-[#007bff] pl-1 hover:underline" href="#"
+              >free website</a
+            >
+          </p>
         </div>
+      </div>
     </footer>
-
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
